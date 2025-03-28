@@ -53,7 +53,7 @@ Convert this to a serverless function for:
 
 ### Option 3: Proxy in AEM Dispatcher
 
-Configure your AEM Dispatcher to forward requests for `/api/maps-key.json` to this service.
+Configure your AEM Dispatcher to forward requests for `/maps-key.json` to this service.
 
 ## Using with AEM EDS
 
