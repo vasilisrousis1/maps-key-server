@@ -2,10 +2,10 @@
   "name": "maps-key-server",
   "version": "1.0.0",
   "description": "Secure server for Google Maps API key",
-  "main": "maps-key-server.js",
+  "main": "eds-endpoints.js",
   "scripts": {
-    "start": "node maps-key-server.js",
-    "dev": "nodemon maps-key-server.js"
+    "start": "node eds-endpoints.js",
+    "dev": "nodemon eds-endpoints.js"
   },
   "dependencies": {
     "cors": "^2.8.5",

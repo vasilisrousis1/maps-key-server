@@ -32,7 +32,7 @@ const limiter = rateLimit({
 app.use(limiter);
 
 // Endpoint to serve the Google Maps API key
-app.get('/maps-key.json', (req, res) => {
+app.get('/maps-key', (req, res) => {
   // Get the API key from environment variables
   const apiKey = process.env.GOOGLE_MAPS_API_KEY;
   
@@ -45,6 +45,21 @@ app.get('/maps-key.json', (req, res) => {
   
   // Return the API key
   res.json({ key: apiKey });
+});
+
+app.get('/pdf-client-id', (req, res) => {
+  // Get the PDF client ID from environment variables
+  const clientId = process.env.PDF_CLIENT_ID;
+  
+  if (!clientId) {
+    return res.status(500).json({ error: 'PDF Client ID not configured on server' });
+  }
+  
+  // Add cache headers
+  res.set('Cache-Control', 'public, max-age=300'); // Cache for 5 minutes
+  
+  // Return the client ID
+  res.json({ clientId: clientId });
 });
 
 // Health check endpoint
